@@ -12,6 +12,8 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <checkstyle.config.location>C:\IdeaProjects\CICD-CheckStyle\checkstyle.xml</checkstyle.config.location>
     </properties>
 
     <dependencies>
@@ -21,6 +23,11 @@
             <version>5.8.2</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+            <version>2.9.1</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -29,6 +36,17 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>2.9.1</version>
+                <configuration>
+                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                    <configLocation>
+                        C:\IdeaProjects\CICD-CheckStyle\checkstyle.xml
+                    </configLocation>
+                </configuration>
             </plugin>
         </plugins>
     </build>
