@@ -26,7 +26,12 @@
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-checkstyle-plugin</artifactId>
-            <version>2.9.1</version>
+            <version>3.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.puppycrawl.tools</groupId>
+            <artifactId>checkstyle</artifactId>
+            <version>9.3</version>
         </dependency>
     </dependencies>
 
@@ -40,13 +45,21 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>2.9.1</version>
+                <version>3.1.2</version>
                 <configuration>
-                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
-                    <configLocation>
-                        C:\IdeaProjects\CICD-CheckStyle\checkstyle.xml
-                    </configLocation>
+                    <configLocation>C:\IdeaProjects\CICD-CheckStyle\checkstyle.xml</configLocation>
+                    <suppressionsLocation>C:\IdeaProjects\CICD-CheckStyle\checkstyle.xml</suppressionsLocation>
+                    <suppressionsFileExpression>C:\IdeaProjects\CICD-CheckStyle\checkstyle.xml</suppressionsFileExpression>
+                    <failsOnError>true</failsOnError>
                 </configuration>
+                <executions>
+                    <execution>
+                        <phase>process-sources</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
