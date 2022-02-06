@@ -33,6 +33,7 @@
             <artifactId>checkstyle</artifactId>
             <version>9.3</version>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -47,9 +48,9 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>3.1.2</version>
                 <configuration>
-                    <configLocation>C:\IdeaProjects\CICD-CheckStyle\checkstyle.xml</configLocation>
-                    <suppressionsLocation>C:\IdeaProjects\CICD-CheckStyle\checkstyle.xml</suppressionsLocation>
-                    <suppressionsFileExpression>C:\IdeaProjects\CICD-CheckStyle\checkstyle.xml</suppressionsFileExpression>
+                    <configLocation>src/main/resources/checkstyle.xml</configLocation>
+                    <suppressionsLocation>src/main/resources/checkstyle.xml</suppressionsLocation>
+                    <suppressionsFileExpression>src/main/resources/checkstyle.xml</suppressionsFileExpression>
                     <failsOnError>true</failsOnError>
                 </configuration>
                 <executions>
